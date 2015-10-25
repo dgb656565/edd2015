@@ -51,10 +51,19 @@ int main()
 				imprimir_resultado(resultado);
 				break;
 			case RESTA:
+                                introducir_datos(&numero1, &numero2);
+                                resultado = resta(numero1, numero2);
+                                imprimir_resultado(resultado);
 				break;
 			case MULTIPLICACION:
+                                introducir_datos(&numero1, &numero2);
+                                resultado = multiplicacion(numero1, numero2);
+                                imprimir_resultado(resultado);
 				break;
 			case DIVISION:
+                                introducir_datos(&numero1, &numero2);
+                                resultado = division(numero1, numero2);
+                                imprimir_resultado(resultado);
 				break;
 			default:
 				break;
