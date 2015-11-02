@@ -16,6 +16,56 @@ void insertar_al_principio(struct nodo *cabecera, int valor_nuevo)
 	cabecera->sig = nuevo;
 }
 
+void insertar_al_final(struct nodo *cabecera, int valor_nuevo)
+{
+	struct nodo *nuevo;
+	struct nodo *actual;
+
+    actual = cabecera;
+	nuevo = (struct nodo*) malloc(sizeof(struct nodo) * 1);
+	nuevo->val = valor_nuevo;
+
+	while(actual->sig != NULL){
+        actual = actual->sig;
+	}
+
+	nuevo->sig = actual->sig;
+	actual->sig= nuevo;
+}
+
+void insertar_despues_de(struct nodo *cabecera, int valor_nuevo, int valor_antes)
+{
+	struct nodo *nuevo;
+	struct nodo *actual;
+
+	nuevo = (struct nodo*) malloc(sizeof(struct nodo) * 1);
+	nuevo->val = valor_nuevo;
+
+	actual = cabecera;
+
+	while(actual->sig != NULL){
+		actual = actual->sig;
+		if(actual->val == valor_antes){
+			nuevo->sig = actual->sig;
+			actual->sig = nuevo;
+			break;
+		}
+	}
+}
+
+void imprimir_lista(struct nodo * cabecera)
+{
+	struct nodo *actual;
+
+	actual = cabecera;
+
+	while(actual->sig != NULL){
+		actual = actual->sig;
+		printf("%d ", actual->val);
+	}
+	printf("\n");
+}
+
 void borrar_lista(struct nodo *cabecera)
 {
 	struct nodo *actual;
@@ -36,3 +86,20 @@ void borrar_lista(struct nodo *cabecera)
 	}
 }
 
+void borrar_elemento(struct nodo *cabecera, int valor_borrar)
+{
+	struct nodo *actual;
+	struct nodo *borrar;
+
+	actual = cabecera;
+	borrar->val = valor_borrar;
+
+	while(cabecera->sig != NULL){
+		actual = actual->sig;
+			if(borrar->val == valor_borrar){
+				borrar = actual->sig;
+				actual->sig = borrar->sig;
+				free(borrar);
+			}
+	}
+}
