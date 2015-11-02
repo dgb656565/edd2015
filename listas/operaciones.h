@@ -3,6 +3,8 @@
 
 #include "nodo.h"
 
+void inicializar(struct nodo *cabecera);
+
 void insertar_al_principio(struct nodo *cabecera, int valor_nuevo);
 
 void insertar_al_final(struct nodo *cabecera, int valor_nuevo);
@@ -13,6 +15,6 @@ void imprimir_lista(struct nodo *cabecera);
 
 void borrar_lista(struct nodo *cabecera);
 
-void inicializar(struct nodo *cabecera);
+void borrar_elemento(struct nodo *cabecera, int valor_borrar);
 
 #endif
