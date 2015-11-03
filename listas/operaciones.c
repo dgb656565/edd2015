@@ -48,7 +48,6 @@ void insertar_despues_de(struct nodo *cabecera, int valor_nuevo, int valor_antes
 		if(actual->val == valor_antes){
 			nuevo->sig = actual->sig;
 			actual->sig = nuevo;
-			break;
 		}
 	}
 }
@@ -61,9 +60,8 @@ void imprimir_lista(struct nodo * cabecera)
 
 	while(actual->sig != NULL){
 		actual = actual->sig;
-		printf("%d ", actual->val);
+		printf("%d, \n ",actual->val);
 	}
-	printf("\n");
 }
 
 void borrar_lista(struct nodo *cabecera)
@@ -92,6 +90,8 @@ void borrar_elemento(struct nodo *cabecera, int valor_borrar)
 	struct nodo *borrar;
 
 	actual = cabecera;
+	borrar = cabecera;
+
 	borrar->val = valor_borrar;
 
 	while(cabecera->sig != NULL){
