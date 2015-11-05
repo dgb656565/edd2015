@@ -86,20 +86,17 @@ void borrar_lista(struct nodo *cabecera)
 
 void borrar_elemento(struct nodo *cabecera, int valor_borrar)
 {
-	struct nodo *actual;
-	struct nodo *borrar;
+    struct nodo *borrar;
+    struct nodo *actual;
 
-	actual = cabecera;
-	borrar = cabecera;
-
-	borrar->val = valor_borrar;
-
-	while(cabecera->sig != NULL){
-		actual = actual->sig;
-			if(borrar->val == valor_borrar){
-				borrar = actual->sig;
-				actual->sig = borrar->sig;
-				free(borrar);
-			}
-	}
+    actual = cabecera;
+    
+    if(actual->sig != NULL){
+    	while (actual->sig->val != valor_borrar){
+        	actual=actual->sig;
+    	}
+            borrar = actual->sig;
+            actual->sig = borrar->sig;
+            free(borrar);
+    }
 }
