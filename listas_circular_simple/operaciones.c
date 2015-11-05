@@ -96,5 +96,5 @@ void borrar_elemento(struct nodo *cabecera, int valor_borrar)
 	borrar = actual->sig;
 	actual->sig = borrar->sig;
 	free(borrar);
-    }
+	}
 }
