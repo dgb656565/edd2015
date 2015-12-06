@@ -34,19 +34,19 @@ void insertar_al_final(struct nodo *cabecera, int valor_nuevo)
 
 void insertar_despues_de(struct nodo *cabecera, int valor_nuevo, int valor_antes)
 {
-	struct nodo *nuevo;
 	struct nodo *actual;
-
+	struct nodo *nuevo;
+    
 	nuevo = (struct nodo*) malloc(sizeof(struct nodo)*1);
 	nuevo->val = valor_nuevo;
 	actual = cabecera;
 	
 	while(actual->sig != cabecera){
-		actual = actual->sig;
-		if(actual->val == valor_antes){
-			nuevo->sig = actual->sig;
-			actual->sig = nuevo;
+		while (actual->sig->val != valor_antes){
+        	actual = actual->sig;
 		}
+	nuevo->sig = actual->sig;
+	actual->sig = nuevo;
 	}
 }
 
@@ -84,24 +84,17 @@ void borrar_lista(struct nodo *cabecera)
 
 void borrar_elemento(struct nodo *cabecera, int valor_borrar)
 {
-	struct nodo *actual;
 	struct nodo *borrar;
-
+	struct nodo *actual;
+	
 	actual = cabecera;
-	borrar = cabecera;
-
-	borrar->val = valor_borrar;
-
-	while(actual->sig != cabecera){
-		borrar = borrar->sig;
-		if(borrar->val == valor_borrar){
-			actual->sig = borrar->sig;
-			free(borrar);
+	
+	if(actual->sig != cabecera){
+		while (actual->sig->val != valor_borrar){
+			actual=actual->sig;
 		}
-		actual=actual->sig;
+	borrar = actual->sig;
+	actual->sig = borrar->sig;
+	free(borrar);
 	}
 }
-
-
-
-
