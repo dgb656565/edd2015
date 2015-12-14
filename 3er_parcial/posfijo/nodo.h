@@ -6,6 +6,7 @@ struct nodo {
 	char val[10];
 	/* Puntero que "apunta" al siguiente nodo */
 	struct	nodo * sig;
+	
 };
 
 #endif

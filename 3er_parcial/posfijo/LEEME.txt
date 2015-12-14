@@ -5,6 +5,5 @@ Programa que convierte una expreción infica a posfija
 * Usar unca pila para los operadores
 * Usar una cola para la salida
 
-
 Puden hacer su nodo como el ejemplo nodo.h
 y usar los operadores atoi, atof.
