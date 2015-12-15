@@ -16,15 +16,6 @@ void push(struct nodo *elemento, int valor_nuevo)
 	elemento->sig = nuevo;
 }
 
-void tope(struct nodo *elemento)
-{
-	struct nodo *actual;
-
-	actual = elemento;
-
-	printf("%d, \n ", actual->val);
-}
-
 void pop(struct nodo *elemento)
 {
 	struct nodo *actual;
@@ -41,3 +32,11 @@ void pop(struct nodo *elemento)
     	}
 }
 
+void tope(struct nodo *elemento)
+{
+	struct nodo *actual;
+
+	actual = elemento;
+
+	printf("%d, \n", actual->val);
+}
