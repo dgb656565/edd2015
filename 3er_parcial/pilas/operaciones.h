@@ -7,8 +7,8 @@ void inicializar(struct nodo *elemento);
 
 void push(struct nodo *elemento, int valor_nuevo);
 
-void tope(struct nodo *elemento);
-
 void pop(struct nodo *elemento);
+
+void tope(struct nodo *elemento);
 
 #endif
