@@ -27,7 +27,6 @@ void pop(struct nodo *elemento)
 
 		actual = actual->sig;
 		free(borrar);
-		borrar = actual;
 		
     	}
 }
@@ -38,5 +37,5 @@ void tope(struct nodo *elemento)
 
 	actual = elemento;
 
-	printf("%d, \n", actual->val);
+	printf("El tope es: %d, \n", actual->val);
 }
